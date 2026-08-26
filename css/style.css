@@ -6,6 +6,42 @@
     --dark: #252525;
 }
 
+/*** Mobile-First Base Rules ***
+ * The rules in this block are written mobile-first: base styles here
+ * target small screens, and are progressively enhanced for larger
+ * viewports further down via min-width media queries where needed.
+ */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* The template leans on Bootstrap's .px-5 utility (3rem/48px each side)
+   for full-width sections. That's fine on desktop but eats too much of
+   a 320-375px phone screen. Scale it down first, then step back up. */
+@media (max-width: 575.98px) {
+    .px-5 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .px-5 {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
+    }
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -154,7 +190,7 @@
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
-        min-height: 500px;
+        min-height: 380px;
     }
     
     #header-carousel .carousel-item img {
@@ -162,6 +198,42 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+/* Fluid hero headline: scales smoothly with viewport width instead of
+   jumping straight to Bootstrap's ~5rem .display-1 size on phones,
+   which previously overflowed and forced horizontal scrolling. */
+#header-carousel .carousel-caption h1.display-1 {
+    font-size: clamp(1.5rem, 5vw + 0.75rem, 5rem);
+    line-height: 1.15;
+}
+
+#header-carousel .carousel-caption h4 {
+    font-size: clamp(0.8rem, 1.5vw + 0.5rem, 1.5rem);
+}
+
+#header-carousel .carousel-caption .p-3 {
+    max-width: 100%;
+    padding: 0.75rem !important;
+}
+
+@media (max-width: 575.98px) {
+    #header-carousel .carousel-control-prev,
+    #header-carousel .carousel-control-next {
+        width: 8%;
+    }
+
+    #header-carousel .carousel-control-prev-icon,
+    #header-carousel .carousel-control-next-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    #header-carousel .carousel-indicators [data-bs-target] {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 8px;
     }
 }
 
@@ -234,6 +306,21 @@
     left: 0;
 }
 
+/* On narrow phones the fixed 80-120px offsets above can push the
+   underline decoration past the viewport edge and trigger unwanted
+   horizontal scroll. Shrink the offsets at small sizes. */
+@media (max-width: 575.98px) {
+    .section-title::before {
+        width: calc(100% + 32px);
+        left: -16px;
+    }
+
+    .section-title::after {
+        width: calc(100% + 48px);
+        left: -24px;
+    }
+}
+
 
 
 /*** Img Border ***/
@@ -262,6 +349,26 @@
     height: calc(100% - 3rem);
     object-fit: cover;
     border-radius: 6px;
+}
+
+/* Scale the decorative offset border down on phones so the image
+   card doesn't force an oversized, cramped block on small screens. */
+@media (max-width: 767.98px) {
+    .img-border {
+        min-height: 280px;
+    }
+
+    .img-border::before {
+        right: 1.25rem;
+        bottom: 1.25rem;
+    }
+
+    .img-border img {
+        top: 1.25rem;
+        left: 1.25rem;
+        width: calc(100% - 1.25rem);
+        height: calc(100% - 1.25rem);
+    }
 }
 
 

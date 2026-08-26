@@ -110,24 +110,30 @@
     
 })(jQuery);
 
-// Existing JavaScript code in main.js
-// ...
+// Note: the logo now stays as a single, higher-resolution image at all
+// screen sizes and is scaled purely with CSS (see #logo-img rules in
+// style.css). Swapping to the 32x32 favicon on mobile previously made
+// the logo blurry/pixelated once stretched into the nav brand area.
 
-// Function to check screen size and switch the logo source
-function updateLogo() {
-    const logoImg = document.getElementById('logo-img');
-    if (window.innerWidth <= 768) { // Mobile devices
-        logoImg.src = 'images/Cyborg Gear Logo - Favicon - 32x32.png';
-    } else { // Desktop and tablets
-        logoImg.src = 'images/Cyborg Gear Logo - Email Signature.png';
+// Newsletter signup: client-side validation + confirmation (no backend attached yet)
+function handleNewsletterSignup(form) {
+    var input = form.querySelector('input[name="email"]');
+    var message = form.querySelector('.newsletter-message');
+    var email = input.value.trim();
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+        message.textContent = 'Please enter a valid email address.';
+        message.classList.remove('text-success');
+        message.classList.add('text-danger');
+        return false;
     }
+
+    message.textContent = "Thanks for signing up! We'll be in touch.";
+    message.classList.remove('text-danger');
+    message.classList.add('text-success');
+    input.value = '';
+    return false; // prevent page reload; hook up a real endpoint here when available
 }
-
-// Attach event listeners for page load and window resize
-window.addEventListener('load', updateLogo);
-window.addEventListener('resize', updateLogo);
-
-// Continue with the rest of your existing JavaScript code
-// ...
 
 
