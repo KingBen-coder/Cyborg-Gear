@@ -24,6 +24,20 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
+
+
+    // Auto-close the mobile hamburger menu on scroll, so it doesn't
+    // stay expanded over the page content while the user scrolls.
+    var navbarCollapseEl = document.getElementById('navbarCollapse');
+    if (navbarCollapseEl) {
+        var closeMobileNavOnScroll = function () {
+            if (navbarCollapseEl.classList.contains('show') && typeof bootstrap !== 'undefined') {
+                var collapseInstance = bootstrap.Collapse.getOrCreateInstance(navbarCollapseEl);
+                collapseInstance.hide();
+            }
+        };
+        window.addEventListener('scroll', closeMobileNavOnScroll, { passive: true });
+    }
     
     
     // Back to top button

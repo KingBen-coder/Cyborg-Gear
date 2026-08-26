@@ -102,6 +102,40 @@ img {
 }
 
 
+/*** Mobile Header Reorganization ***
+ * On small screens the full "Brand & Contact" strip (logo + opening
+ * hours + phone + email, each on its own row) is hidden via
+ * d-none d-lg-block in the markup. Instead the navbar itself carries
+ * a compact logo, and phone/email are reachable as tap-to-call /
+ * tap-to-email links inside the mobile menu — keeping the header
+ * short and predictable on a phone instead of a tall stack of blocks.
+ */
+#logo-img-mobile {
+    height: 34px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+}
+
+.navbar .mobile-quick-contact a {
+    display: inline-flex;
+    align-items: center;
+    opacity: .9;
+    text-decoration: none;
+}
+
+.navbar .mobile-quick-contact a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+    .mobile-quick-contact {
+        display: none !important;
+    }
+}
+
+
 /*** Navbar ***/
 .navbar .dropdown-toggle::after {
     border: none;
