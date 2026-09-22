@@ -352,6 +352,18 @@ h1, h2, h3, h4, h5, h6,
     border-color: transparent;
 }
 
+/* .cg-card's height:100% is meant for cards sitting side-by-side as
+   equal-height Bootstrap columns in a row (feature grids, service
+   grids, industry cards). For cards that are simply stacked one
+   below another (FAQ lists, accordion items) there's no sibling
+   column to match height against, and height:100% instead creates
+   a circular sizing reference against the parent's own auto-height —
+   which was distorting and overlapping the FAQ boxes. This class
+   opts a stacked card back out of that behavior. */
+.cg-card-stack {
+    height: auto;
+}
+
 .cg-icon-circle {
     width: 56px;
     height: 56px;
