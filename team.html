@@ -4,21 +4,23 @@
 <head>
     <meta charset="utf-8">
     <title>Our Team - Cyborg Gear</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="cyborg gear team, web developer Nairobi, cloud architect, UI UX designer, IT consultant" name="keywords">
-    <meta content="Meet the Cyborg Gear team: developers, cloud architects, designers and IT consultants dedicated to your business's digital success." name="description">
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+    <meta content="cyborg gear team, web developer Nairobi, cloud architect" name="keywords">
+    <meta content="Meet the Cyborg Gear team: developers, designers and IT consultants dedicated to your business's digital success." name="description">
+    <meta property="og:title" content="Our Team - Cyborg Gear">
+    <meta property="og:description" content="Meet the Cyborg Gear team: developers, designers and IT consultants dedicated to your business's digital success.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0E1729">
 
     <!-- Favicon -->
     <link href="images/Cyborg Gear Logo - Favicon - 32x32.png" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -30,323 +32,223 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
-        <i class="fa fa-laptop-code fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>
+        <div class="spinner-border position-relative text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
     </div>
     <!-- Spinner End -->
-
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light px-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="row gx-0 align-items-center d-none d-lg-flex">
-            <div class="col-lg-6 px-5 text-start">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="contact.html">Career</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="terms.html">Terms</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="privacy.html">Privacy</a></li>
-                </ol>
-            </div>
-            <div class="col-lg-6 px-5 text-end">
-                <small>Follow us:</small>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn-square text-primary border-end rounded-0" href="https://www.facebook.com/cyborggear"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn-square text-primary pe-0" href="https://www.instagram.com/cyborggear/"><i class="fab fa-instagram"></i></a>
+    <!-- Utility Bar -->
+    <div class="cg-utility-bar d-none d-lg-block">
+        <div class="container-fluid px-5">
+            <div class="row align-items-center py-2">
+                <div class="col-lg-7">
+                    <a href="mailto:gearcyborg@gmail.com" class="me-4"><i class="far fa-envelope me-2"></i>gearcyborg@gmail.com</a>
+                    <a href="tel:+254717474848" class="me-4"><i class="fa fa-phone-alt me-2"></i>+254 717 474 848</a>
+                    <span><i class="fa fa-map-marker-alt me-2"></i>Ongata Rongai, Nairobi, Kenya</span>
+                </div>
+                <div class="col-lg-5 text-end">
+                    <span class="me-3">Mon&ndash;Fri, 8AM&ndash;5PM</span>
+                    <span class="cg-social">
+                        <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    </span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
-
-
-    <!-- Brand & Contact Start -->
-    <div class="container-fluid py-4 px-5 wow fadeIn d-none d-lg-block" data-wow-delay="0.1s">
-        <div class="row align-items-center top-bar">
-            <div class="col-lg-4 col-md-12 text-center text-lg-start">
-                <a href="index.html" class="navbar-brand m-0 p-0">
-                    <!--<h1 class="fw-bold text-primary m-0"><i class="fa fa-laptop-code me-3"></i>DGcom</h1>-->
-                    <img src="images/Cyborg Gear Logo - Email Signature.png" alt="Logo"> 
-                </a>
-            </div>
-            <div class="col-lg-8 col-md-7 d-none d-lg-block">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <div class="flex-shrink-0 btn-lg-square border rounded-circle">
-                                <i class="far fa-clock text-primary"></i>
-                            </div>
-                            <div class="ps-3">
-                                <p class="mb-2">Opening Hour</p>
-                                <h6 class="mb-0">Mon - Fri, 8AM - 5PM</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <div class="flex-shrink-0 btn-lg-square border rounded-circle">
-                                <i class="fa fa-phone text-primary"></i>
-                            </div>
-                            <div class="ps-3">
-                                <p class="mb-2">Call Us</p>
-                                <h6 class="mb-0">+254 717 474 848</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <div class="flex-shrink-0 btn-lg-square border rounded-circle">
-                                <i class="far fa-envelope text-primary"></i>
-                            </div>
-                            <div class="ps-3">
-                                <p class="mb-2">Email Us</p>
-                                <h6 class="mb-0">gearcyborg@gmail.com</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Brand & Contact End -->
-
-
+    <!-- Utility Bar End -->
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand d-lg-none ms-3 p-0">
-            <img src="images/Cyborg Gear Logo - Email Signature.png" alt="Cyborg Gear" id="logo-img-mobile">
-        </a>
-        <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav me-auto p-3 p-lg-0">
+    <nav class="navbar navbar-expand-lg cg-navbar sticky-top">
+        <div class="container-fluid px-lg-5">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="images/Cyborg Gear Logo - Email Signature.png" alt="Cyborg Gear" id="logo-img">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-3 py-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="service.html" class="nav-item nav-link">Services</a>
-                <a href="project.html" class="nav-item nav-link">Projects</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
-                        <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item active">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu border-0 rounded m-0">
+                        <a href="services/web-design.html" class="dropdown-item"><strong>Web Design</strong><small>Fast, modern websites built for leads.</small></a><a href="services/app-development.html" class="dropdown-item"><strong>App Development</strong><small>Mobile & web apps built around your workflow.</small></a><a href="services/seo.html" class="dropdown-item"><strong>SEO</strong><small>Technical, local and content SEO systems.</small></a><a href="services/procurement.html" class="dropdown-item"><strong>Hardware & Software Procurement</strong><small>Sourced, configured and supported.</small></a><a href="services/social-media-marketing.html" class="dropdown-item"><strong>Social Media Marketing</strong><small>Content, campaigns and community growth.</small></a><a href="services/email-marketing.html" class="dropdown-item"><strong>Email Marketing</strong><small>Newsletters and lifecycle campaigns that convert.</small></a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                <a href="industries.html" class="nav-item nav-link">Industries</a>
+                <a href="project.html" class="nav-item nav-link">Work</a>
+                <a href="pricing.html" class="nav-item nav-link">Pricing</a>
+                
+                <div class="nav-item dropdown">
+                    <a href="faqs.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Resources</a>
+                    <div class="dropdown-menu border-0 rounded m-0">
+                        <a href="process.html" class="dropdown-item"><strong>Our Process</strong><small>How a project moves from brief to launch.</small></a><a href="faqs.html" class="dropdown-item"><strong>FAQs</strong><small>Common questions before you start.</small></a><a href="team.html" class="dropdown-item"><strong>Our Team</strong><small>Meet the people behind the work.</small></a><a href="testimonial.html" class="dropdown-item"><strong>Testimonials</strong><small>What clients say about working with us.</small></a>
+                    </div>
+                </div>
+                </div>
+                <div class="d-flex d-lg-none flex-column gap-2 px-1 pb-3 mobile-quick-contact">
+                    <a class="text-navy small" href="tel:+254717474848"><i class="fa fa-phone-alt me-2"></i>+254 717 474 848</a>
+                    <a class="text-navy small" href="mailto:gearcyborg@gmail.com"><i class="far fa-envelope me-2"></i>gearcyborg@gmail.com</a>
+                </div>
+                <a href="quote.html" class="btn btn-cg-primary d-none d-lg-inline-flex">Get a Quote</a>
             </div>
-            <div class="d-flex d-lg-none flex-column gap-2 px-3 pb-3 mobile-quick-contact">
-                <a class="text-white small" href="tel:+254717474848"><i class="fa fa-phone-alt me-2"></i>+254 717 474 848</a>
-                <a class="text-white small" href="mailto:gearcyborg@gmail.com"><i class="far fa-envelope me-2"></i>gearcyborg@gmail.com</a>
-            </div>
-            <a href="contact.html" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Get Started</a>
         </div>
     </nav>
     <!-- Navbar End -->
 
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5">
-            <h1 class="display-4 text-white animated slideInDown mb-3">Our Team</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Our Team</li>
-                </ol>
-            </nav>
+    <div class="cg-page-hero">
+        <div class="container text-center">
+            <div class="cg-eyebrow justify-content-center" style="color:#17C3E6;">Our Team</div>
+            <h1 class="mb-3">The people behind the work</h1>
+            <nav class="cg-breadcrumb"><a href="index.html">Home</a><span class="mx-2">/</span><span class="active">Our Team</span></nav>
         </div>
     </div>
-    <!-- Page Header End -->
 
-
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <div class="cg-section">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Our Team</h6>
-                <h1 class="display-6 mb-4">We Are A Creative Team For Your Dream Project</h1>
-            </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-1_500x500.jpeg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Ben Joseph</h5>
-                                <span>Founder &amp; Web Developer</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                            </div>
+                    <div class="cg-card text-center">
+                        <img class="rounded-circle mb-3" src="img/team-1_500x500.jpeg" alt="Ben Joseph" style="width:120px; height:120px; object-fit:cover;">
+                        <h5 class="mb-1">Ben Joseph</h5>
+                        <p class="text-secondary mb-3">Founder &amp; Web Developer</p>
+                        <div class="cg-social d-flex justify-content-center">
+                            <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-2__500x500.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Artem Podrez</h5>
-                                <span>Cloud Architect</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                            </div>
+                </div><div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="cg-card text-center">
+                        <img class="rounded-circle mb-3" src="img/team-2__500x500.jpg" alt="Artem Podrez" style="width:120px; height:120px; object-fit:cover;">
+                        <h5 class="mb-1">Artem Podrez</h5>
+                        <p class="text-secondary mb-3">Cloud Architect</p>
+                        <div class="cg-social d-flex justify-content-center">
+                            <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-3_500x500.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Rachel Morillo</h5>
-                                <span>UI/UX Designer</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                            </div>
+                </div><div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="cg-card text-center">
+                        <img class="rounded-circle mb-3" src="img/team-3_500x500.jpg" alt="Rachel Morillo" style="width:120px; height:120px; object-fit:cover;">
+                        <h5 class="mb-1">Rachel Morillo</h5>
+                        <p class="text-secondary mb-3">UI/UX Designer</p>
+                        <div class="cg-social d-flex justify-content-center">
+                            <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-4.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Faith Clark</h5>
-                                <span>Hardware & Software</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                            </div>
+                </div><div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="cg-card text-center">
+                        <img class="rounded-circle mb-3" src="img/team-4.jpg" alt="Faith Clark" style="width:120px; height:120px; object-fit:cover;">
+                        <h5 class="mb-1">Faith Clark</h5>
+                        <p class="text-secondary mb-3">Hardware &amp; Software</p>
+                        <div class="cg-social d-flex justify-content-center">
+                            <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-5.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Caroline Munyu</h5>
-                                <span>IT Consultant</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                            </div>
+                </div><div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="cg-card text-center">
+                        <img class="rounded-circle mb-3" src="img/team-5.jpg" alt="Team Member" style="width:120px; height:120px; object-fit:cover;">
+                        <h5 class="mb-1">Team Member</h5>
+                        <p class="text-secondary mb-3">Digital Marketing</p>
+                        <div class="cg-social d-flex justify-content-center">
+                            <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-6.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Noel Carson</h5>
-                                <span>SEO Optimization</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                            </div>
+                </div><div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="cg-card text-center">
+                        <img class="rounded-circle mb-3" src="img/team-6.jpg" alt="Team Member" style="width:120px; height:120px; object-fit:cover;">
+                        <h5 class="mb-1">Team Member</h5>
+                        <p class="text-secondary mb-3">IT Support</p>
+                        <div class="cg-social d-flex justify-content-center">
+                            <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener" style="background:var(--cg-light); color:var(--cg-navy);"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Team End -->
 
-
+    <div class="container mb-5">
+        <div class="cg-cta-band">
+            <h2 class="mb-3">Want to work with us?</h2>
+            <a href="quote.html" class="btn-cg-primary">Get a Quote</a>
+        </div>
+    </div>
+    <!-- Floating Actions -->
+    <div class="cg-floating-actions">
+        <a href="https://wa.me/254717474848?text=Hello%20Cyborg%20Gear%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="cg-fab-whatsapp" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+254717474848" class="cg-fab-call" aria-label="Call Cyborg Gear"><i class="fa fa-phone-alt"></i></a>
+    </div>
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Address</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Ongata Rongai, Nairobi, Kenya</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254 717 474 848</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>gearcyborg@gmail.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href="https://www.facebook.com/cyborggear"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href="https://www.instagram.com/cyborggear/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-0" href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    <div class="cg-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="cg-footer-logo">
+                        <img src="images/Cyborg Gear Logo - Email Signature.png" alt="Cyborg Gear" style="height:42px; filter: brightness(0) invert(1);">
+                    </div>
+                    <p>A Nairobi-based technical partner for web design, app development, SEO, hardware &amp; software procurement, and digital marketing &mdash; built to bring in leads, sales and trust.</p>
+                    <div class="cg-social mt-3">
+                        <a href="https://www.facebook.com/cyborggear" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/cyborggear/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="service.html">Our Services</a>
-                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
-                    <a class="btn btn-link" href="contact.html">Support</a>
+                <div class="col-lg-2 col-6">
+                    <h6>Services</h6>
+                    <a href="services/web-design.html">Web Design</a>
+                    <a href="services/app-development.html">App Development</a>
+                    <a href="services/seo.html">SEO</a>
+                    <a href="services/procurement.html">Procurement</a>
+                    <a href="services/social-media-marketing.html">Social Media</a>
+                    <a href="services/email-marketing.html">Email Marketing</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Gallery</h5>
-                    <div class="row g-2">
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-1.jpg" alt="Image">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-2.jpg" alt="Image">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-3.jpg" alt="Image">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-4.jpg" alt="Image">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-5.jpg" alt="Image">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-6.jpg" alt="Image">
-                        </div>
-                    </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Company</h6>
+                    <a href="about.html">About Us</a>
+                    <a href="team.html">Our Team</a>
+                    <a href="project.html">Our Work</a>
+                    <a href="industries.html">Industries</a>
+                    <a href="testimonial.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Newsletter</h5>
-                    <p>Welcome to Cyborg Gear, the home of tech.</p>
-                    <form class="newsletter-form position-relative mx-auto" style="max-width: 400px;" onsubmit="return handleNewsletterSignup(this);">
-                        <input class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="email" name="email" placeholder="Your email" required>
-                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                        <div class="newsletter-message small mt-2"></div>
-                    </form>
+                <div class="col-lg-2 col-6">
+                    <h6>Resources</h6>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="process.html">Our Process</a>
+                    <a href="faqs.html">FAQs</a>
+                    <a href="quote.html">Get a Quote</a>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Office</h6>
+                    <p class="mb-2">Ongata Rongai, Nairobi, Kenya</p>
+                    <p class="mb-2">Mon&ndash;Fri, 8AM&ndash;5PM</p>
+                    <a href="tel:+254717474848">+254 717 474 848</a>
+                    <a href="mailto:gearcyborg@gmail.com">gearcyborg@gmail.com</a>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="index.html">Cyborg Gear</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        
-                        Designed By <a href="index.html">Cyborg Gear</a>
-                    </div>
+            <div class="cg-footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+                <div>&copy; <a href="index.html" class="d-inline">Cyborg Gear</a> 2026. All rights reserved.</div>
+                <div>
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

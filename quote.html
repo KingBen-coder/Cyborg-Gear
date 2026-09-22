@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Privacy Policy - Cyborg Gear</title>
+    <title>Get a Quote - Cyborg Gear</title>
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
-    <meta content="cyborg gear privacy policy" name="keywords">
-    <meta content="Read Cyborg Gear's Privacy Policy to understand how we collect, use and protect your information." name="description">
-    <meta property="og:title" content="Privacy Policy - Cyborg Gear">
-    <meta property="og:description" content="Read Cyborg Gear's Privacy Policy to understand how we collect, use and protect your information.">
+    <meta content="get a quote cyborg gear, web design quote Kenya" name="keywords">
+    <meta content="Request a quote from Cyborg Gear for web design, app development, SEO, procurement or digital marketing." name="description">
+    <meta property="og:title" content="Get a Quote - Cyborg Gear">
+    <meta property="og:description" content="Request a quote from Cyborg Gear for web design, app development, SEO, procurement or digital marketing.">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#0E1729">
 
@@ -105,40 +105,63 @@
 
     <div class="cg-page-hero">
         <div class="container text-center">
-            <div class="cg-eyebrow justify-content-center" style="color:#17C3E6;">Legal</div>
-            <h1 class="mb-3">Privacy Policy</h1>
-            <nav class="cg-breadcrumb"><a href="index.html">Home</a><span class="mx-2">/</span><span class="active">Privacy Policy</span></nav>
+            <div class="cg-eyebrow justify-content-center" style="color:#17C3E6;">Get a Quote</div>
+            <h1 class="mb-3">Tell us about your project</h1>
+            <nav class="cg-breadcrumb"><a href="index.html">Home</a><span class="mx-2">/</span><span class="active">Get a Quote</span></nav>
         </div>
     </div>
 
     <div class="cg-section">
         <div class="container">
-            <div class="mx-auto cg-card" style="max-width: 860px;">
-                <p class="text-secondary">Last updated: August 2026</p>
-
-                <h5 class="mt-4">1. Introduction</h5>
-                <p>Cyborg Gear ("we", "us") respects your privacy. This policy explains what information we collect through our website and services, how we use it, and the choices available to you.</p>
-
-                <h5 class="mt-4">2. Information We Collect</h5>
-                <p>We may collect information you provide directly, such as your name, email address, and phone number when you contact us, request a quote, or sign up for our newsletter. We do not knowingly collect sensitive personal information through our website.</p>
-
-                <h5 class="mt-4">3. How We Use Information</h5>
-                <p>We use the information you share to respond to enquiries, provide requested services, and, where you have opted in, send occasional updates about Cyborg Gear. We do not sell your personal information to third parties.</p>
-
-                <h5 class="mt-4">4. Cookies</h5>
-                <p>Our website may use basic cookies to support functionality such as remembering navigation preferences. You can control cookies through your browser settings.</p>
-
-                <h5 class="mt-4">5. Data Security</h5>
-                <p>We take reasonable technical and organizational measures to protect the information you share with us. However, no method of transmission over the internet is completely secure.</p>
-
-                <h5 class="mt-4">6. Third-Party Links</h5>
-                <p>Our website may link to third-party sites, including our social media pages. We are not responsible for the privacy practices of those external sites.</p>
-
-                <h5 class="mt-4">7. Your Choices</h5>
-                <p>You may request access to, correction of, or deletion of your personal information at any time by contacting us using the details below.</p>
-
-                <h5 class="mt-4">8. Contact Us</h5>
-                <p class="mb-0">For questions about this Privacy Policy, please <a href="contact.html" style="color:var(--cg-blue);">contact us</a> or email <a href="mailto:gearcyborg@gmail.com" style="color:var(--cg-blue);">gearcyborg@gmail.com</a>.</p>
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <form onsubmit="return handleQuoteSubmit(this);">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Your Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Email</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Phone / WhatsApp</label>
+                                <input type="tel" class="form-control" name="phone">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Service Needed</label>
+                                <select class="form-select" name="service">
+                                    <option>Web Design &amp; Development</option>
+                                    <option>App Development</option>
+                                    <option>SEO Optimization</option>
+                                    <option>Hardware &amp; Software Procurement</option>
+                                    <option>Social Media Marketing</option>
+                                    <option>Email Marketing</option>
+                                    <option>Not sure &mdash; advise me</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Tell us about your project</label>
+                                <textarea class="form-control" name="message" rows="5" placeholder="What do you sell, who do you serve, and what isn't working today?" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-cg-primary">Send Request <i class="fa fa-arrow-right"></i></button>
+                                <div class="quote-message small mt-3"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-5">
+                    <div class="cg-card">
+                        <h6 class="mb-3">Prefer to talk directly?</h6>
+                        <a class="d-flex align-items-center mb-3" style="text-decoration:none; color:var(--cg-navy);" href="tel:+254717474848"><span class="cg-icon-circle me-3" style="width:44px;height:44px;font-size:1.1rem;"><i class="fa fa-phone-alt"></i></span>+254 717 474 848</a>
+                        <a class="d-flex align-items-center mb-3" style="text-decoration:none; color:var(--cg-navy);" href="mailto:gearcyborg@gmail.com"><span class="cg-icon-circle me-3" style="width:44px;height:44px;font-size:1.1rem;"><i class="far fa-envelope"></i></span>gearcyborg@gmail.com</a>
+                        <a class="d-flex align-items-center" style="text-decoration:none; color:var(--cg-navy);" href="https://wa.me/254717474848?text=Hello%20Cyborg%20Gear%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener"><span class="cg-icon-circle me-3" style="width:44px;height:44px;font-size:1.1rem; background:rgba(34,197,94,0.12); color:#22C55E;"><i class="fab fa-whatsapp"></i></span>Chat on WhatsApp</a>
+                        <hr class="my-4">
+                        <p class="text-secondary small mb-0">We usually reply within one business day. Office hours: Mon&ndash;Fri, 8AM&ndash;5PM.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

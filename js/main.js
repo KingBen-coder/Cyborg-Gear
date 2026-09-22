@@ -150,4 +150,46 @@ function handleNewsletterSignup(form) {
     return false; // prevent page reload; hook up a real endpoint here when available
 }
 
+// Quote request form: client-side validation + confirmation (no backend attached yet).
+// To actually receive these requests, wire this up to a form service (e.g. Formspree)
+// or a backend endpoint, and replace the confirmation-only logic below.
+function handleQuoteSubmit(form) {
+    var messageEl = form.querySelector('.quote-message');
+    var emailInput = form.querySelector('input[name="email"]');
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(emailInput.value.trim())) {
+        messageEl.textContent = 'Please enter a valid email address.';
+        messageEl.classList.remove('text-success');
+        messageEl.classList.add('text-danger');
+        return false;
+    }
+
+    messageEl.textContent = "Thanks — we've received your request and will get back to you within one business day. For a faster reply, feel free to call or WhatsApp us directly.";
+    messageEl.classList.remove('text-danger');
+    messageEl.classList.add('text-success');
+    form.reset();
+    return false;
+}
+
+// Contact form: same pattern as the quote form above.
+function handleContactSubmit(form) {
+    var messageEl = form.querySelector('.contact-message');
+    var emailInput = form.querySelector('input[name="email"]');
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(emailInput.value.trim())) {
+        messageEl.textContent = 'Please enter a valid email address.';
+        messageEl.classList.remove('text-success');
+        messageEl.classList.add('text-danger');
+        return false;
+    }
+
+    messageEl.textContent = "Thanks for reaching out — we'll get back to you shortly.";
+    messageEl.classList.remove('text-danger');
+    messageEl.classList.add('text-success');
+    form.reset();
+    return false;
+}
+
 

@@ -1,0 +1,669 @@
+/* ==========================================================================
+   Cyborg Gear — Theme 2.0
+   Original design system for the site rebuild. Loaded after
+   bootstrap.min.css and style.css so these rules take precedence.
+   ========================================================================== */
+
+:root {
+    --cg-navy: #0E1729;
+    --cg-navy-soft: #16223B;
+    --cg-blue: #1466FF;
+    --cg-blue-dark: #0F4ECC;
+    --cg-cyan: #17C3E6;
+    --cg-light: #F4F7FC;
+    --cg-gray: #64748B;
+    --cg-border: #E4E9F2;
+    --cg-whatsapp: #22C55E;
+    --cg-radius: 16px;
+    --cg-radius-sm: 10px;
+    --cg-shadow: 0 10px 30px rgba(14, 23, 41, 0.08);
+    --cg-shadow-lg: 0 20px 45px rgba(14, 23, 41, 0.14);
+
+    /* Re-point the legacy template variables at the new brand color
+       so older components (progress bars, .text-primary, .bg-primary,
+       .btn-primary, icon accents, etc.) automatically pick up the
+       new palette without needing to touch every selector. */
+    --primary: #1466FF;
+    --secondary: #64748B;
+    --light: #F4F7FC;
+    --dark: #0E1729;
+}
+
+/* ---- Typography ---- */
+body {
+    font-family: 'Inter', 'Open Sans', sans-serif;
+    color: #1E293B;
+}
+
+h1, h2, h3, h4, h5, h6,
+.cg-heading {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--cg-navy);
+    letter-spacing: -0.01em;
+}
+
+.cg-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cg-blue);
+    margin-bottom: 0.75rem;
+}
+
+.cg-eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: var(--cg-blue);
+    display: inline-block;
+}
+
+.cg-lead {
+    color: var(--cg-gray);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ---- Buttons ---- */
+.btn-cg-primary {
+    background: var(--cg-blue);
+    border: 1px solid var(--cg-blue);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.85rem 1.75rem;
+    transition: all .25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cg-primary:hover {
+    background: var(--cg-blue-dark);
+    border-color: var(--cg-blue-dark);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-cg-outline {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.85rem 1.75rem;
+    transition: all .25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cg-outline:hover {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-cg-outline-dark {
+    background: transparent;
+    border: 1px solid var(--cg-border);
+    color: var(--cg-navy);
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.85rem 1.75rem;
+    transition: all .25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cg-outline-dark:hover {
+    background: var(--cg-navy);
+    color: #fff;
+    border-color: var(--cg-navy);
+}
+
+/* ---- Utility bar ---- */
+.cg-utility-bar {
+    background: var(--cg-navy);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+}
+
+.cg-utility-bar a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+}
+
+.cg-utility-bar a:hover {
+    color: #fff;
+}
+
+.cg-utility-bar .cg-social a {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    margin-left: 6px;
+}
+
+.cg-utility-bar .cg-social a:hover {
+    background: var(--cg-blue);
+}
+
+/* ---- Navbar ---- */
+.cg-navbar {
+    background: #fff;
+    box-shadow: 0 1px 0 var(--cg-border);
+    padding: 0.9rem 0;
+    transition: box-shadow .2s ease;
+}
+
+.cg-navbar.sticky-top {
+    top: 0 !important;
+    transition: box-shadow .3s ease;
+}
+
+
+.cg-navbar .navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+.cg-navbar .nav-link {
+    color: var(--cg-navy);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem !important;
+}
+
+.cg-navbar .nav-link:hover,
+.cg-navbar .nav-link.active {
+    color: var(--cg-blue);
+}
+
+.cg-navbar .dropdown-menu {
+    border: none;
+    border-radius: var(--cg-radius-sm);
+    box-shadow: var(--cg-shadow-lg);
+    padding: 0.5rem;
+    min-width: 260px;
+}
+
+.cg-navbar .dropdown-item {
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    white-space: normal;
+}
+
+.cg-navbar .dropdown-item:hover {
+    background: var(--cg-light);
+}
+
+.cg-navbar .dropdown-item small {
+    display: block;
+    color: var(--cg-gray);
+    font-size: 0.78rem;
+    font-weight: 400;
+}
+
+/* ---- Hero ---- */
+.cg-hero {
+    position: relative;
+    background: linear-gradient(120deg, var(--cg-navy) 0%, #16233B 55%, #0F4ECC 140%);
+    color: #fff;
+    overflow: hidden;
+    padding: 5.5rem 0 4.5rem;
+}
+
+.cg-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 15% 20%, rgba(23,195,230,0.18), transparent 40%),
+                       radial-gradient(circle at 85% 80%, rgba(20,102,255,0.25), transparent 45%);
+    pointer-events: none;
+}
+
+.cg-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cg-hero h1 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
+    line-height: 1.15;
+}
+
+.cg-hero p.cg-lead {
+    color: rgba(255,255,255,0.8);
+    max-width: 640px;
+}
+
+.cg-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+}
+
+.cg-hero-badges span {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.82rem;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cg-hero-badges i {
+    color: var(--cg-cyan);
+}
+
+/* Inner page hero (shorter, for non-home pages) */
+.cg-page-hero {
+    background: linear-gradient(120deg, var(--cg-navy) 0%, #16233B 60%, #0F4ECC 150%);
+    color: #fff;
+    padding: 3.5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cg-page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 90% 10%, rgba(23,195,230,0.2), transparent 40%);
+}
+
+.cg-page-hero h1 {
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 2.75rem);
+    line-height: 1.2;
+}
+
+.cg-page-hero .cg-breadcrumb {
+    position: relative;
+    z-index: 2;
+}
+
+.cg-page-hero .cg-breadcrumb a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+}
+
+.cg-page-hero .cg-breadcrumb a:hover { color: #fff; }
+.cg-page-hero .cg-breadcrumb .active { color: var(--cg-cyan); }
+
+/* ---- Sections ---- */
+.cg-section {
+    padding: 5rem 0;
+}
+
+.cg-section-muted {
+    background: var(--cg-light);
+}
+
+/* ---- Cards ---- */
+.cg-card {
+    background: #fff;
+    border: 1px solid var(--cg-border);
+    border-radius: var(--cg-radius);
+    padding: 2rem;
+    height: 100%;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.cg-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--cg-shadow-lg);
+    border-color: transparent;
+}
+
+.cg-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(20,102,255,0.1);
+    color: var(--cg-blue);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.cg-card a.cg-card-link {
+    color: var(--cg-blue);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cg-card a.cg-card-link i {
+    transition: transform .2s ease;
+}
+
+.cg-card a.cg-card-link:hover i {
+    transform: translateX(4px);
+}
+
+/* Industry card (image-backed) */
+.cg-industry-card {
+    position: relative;
+    border-radius: var(--cg-radius);
+    overflow: hidden;
+    height: 260px;
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    text-decoration: none;
+}
+
+.cg-industry-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.cg-industry-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(14,23,41,0) 30%, rgba(14,23,41,0.9) 100%);
+}
+
+.cg-industry-card:hover img {
+    transform: scale(1.06);
+}
+
+.cg-industry-card .cg-industry-body {
+    position: relative;
+    z-index: 2;
+    padding: 1.25rem;
+}
+
+.cg-industry-card h5 {
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.cg-industry-card p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* ---- Stats ---- */
+.cg-stats {
+    background: var(--cg-navy);
+    color: #fff;
+    border-radius: var(--cg-radius);
+    padding: 3rem 2rem;
+}
+
+.cg-stat-number {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.cg-stat-label {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+}
+
+/* ---- Process ---- */
+.cg-process-step {
+    position: relative;
+    padding-left: 4.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.cg-process-step:last-child { margin-bottom: 0; }
+
+.cg-process-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    background: var(--cg-blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ---- CTA band ---- */
+.cg-cta-band {
+    background: linear-gradient(120deg, var(--cg-navy), #0F4ECC);
+    color: #fff;
+    border-radius: var(--cg-radius);
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+}
+
+.cg-cta-band h2 { color: #fff; }
+.cg-cta-band p { color: rgba(255,255,255,0.8); }
+
+/* ---- Testimonial card ---- */
+.cg-testimonial-card {
+    background: #fff;
+    border: 1px solid var(--cg-border);
+    border-radius: var(--cg-radius);
+    padding: 2rem;
+    height: 100%;
+}
+
+.cg-testimonial-card .cg-stars { color: #F5A623; margin-bottom: 1rem; }
+
+.cg-testimonial-card .cg-quote {
+    color: #334155;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.cg-testimonial-card .cg-author img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+/* ---- Footer ---- */
+.cg-footer {
+    background: var(--cg-navy);
+    color: rgba(255,255,255,0.65);
+    padding: 4.5rem 0 0;
+}
+
+.cg-footer h6 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.cg-footer a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.65rem;
+    font-size: 0.92rem;
+}
+
+.cg-footer a:hover { color: #fff; }
+
+.cg-footer .cg-footer-logo img {
+    height: 42px;
+    margin-bottom: 1.25rem;
+}
+
+.cg-footer .cg-social a {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    margin: 0 6px 0 0;
+}
+
+.cg-footer .cg-social a:hover { background: var(--cg-blue); }
+
+.cg-footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+}
+
+.cg-footer-bottom a {
+    display: inline;
+    margin: 0 0 0 1.25rem;
+}
+
+/* ---- Floating action buttons ---- */
+.cg-floating-actions {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cg-floating-actions a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.3rem;
+    box-shadow: var(--cg-shadow-lg);
+    transition: transform .2s ease;
+}
+
+.cg-floating-actions a:hover { transform: translateY(-3px); color: #fff; }
+
+.cg-floating-actions .cg-fab-call { background: var(--cg-blue); }
+.cg-floating-actions .cg-fab-whatsapp { background: var(--cg-whatsapp); }
+
+/* ---- Breadcrumb pill list on inner pages (services/industries index) ---- */
+.cg-filter-pill {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--cg-border);
+    color: var(--cg-navy);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 0.4rem 0.6rem 0;
+}
+
+.cg-filter-pill:hover, .cg-filter-pill.active {
+    background: var(--cg-navy);
+    color: #fff;
+    border-color: var(--cg-navy);
+}
+
+/* ---- Small utility additions ---- */
+.text-navy { color: var(--cg-navy) !important; }
+
+.mobile-quick-contact a {
+    text-decoration: none;
+}
+
+.back-to-top {
+    background: var(--cg-blue) !important;
+}
+
+@media (min-width: 992px) {
+    .mobile-quick-contact { display: none !important; }
+}
+
+/* Ensure the collapsible mobile nav scrolls if long, and sits under the white navbar */
+@media (max-width: 991.98px) {
+    .cg-navbar .navbar-collapse {
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    .cg-navbar .dropdown-menu {
+        box-shadow: none;
+        border: 1px solid var(--cg-border);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .cg-section { padding: 3.5rem 0; }
+    .cg-hero { padding: 3rem 0 3rem; }
+    .cg-stats { text-align: center; }
+}
+
+@media (max-width: 575.98px) {
+    .cg-cta-band { padding: 2.5rem 1.25rem; }
+    .cg-process-step { padding-left: 3.75rem; }
+    .cg-process-number { width: 2.75rem; height: 2.75rem; font-size: 0.95rem; }
+    .cg-floating-actions a { width: 46px; height: 46px; font-size: 1.15rem; }
+}
+
+/* The back-to-top button and the new call/WhatsApp floating actions
+   both sit fixed at the bottom-right; stack the back-to-top button
+   above them so neither is obscured or hard to tap. */
+.back-to-top {
+    right: 1.25rem !important;
+    bottom: 8.5rem !important;
+}
+
+@media (max-width: 575.98px) {
+    .back-to-top {
+        bottom: 7.75rem !important;
+    }
+}
+
+/* Tighten card padding and give pricing cards a 2-up layout on
+   tablets instead of stacking full-width, which wasted space. */
+@media (max-width: 575.98px) {
+    .cg-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    #pricing-cards > .col-lg-4 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
