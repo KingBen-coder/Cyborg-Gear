@@ -256,6 +256,37 @@ h1, h2, h3, h4, h5, h6,
     z-index: 2;
 }
 
+/* Decorative code-editor visual on the right side of the homepage
+   hero. Kept desktop-only (the blank space it fills only exists at
+   lg+, where the text column doesn't need the full row width), sat
+   behind the hero copy, and faded/blended so it reads as ambient
+   texture rather than a competing photo:
+   - opacity + mix-blend-mode tint it with the navy/blue gradient
+     already behind it instead of showing its own true colors
+   - a mask-image gradient fades the left edge to transparent so
+     there's no hard rectangular seam, just a soft blend into the
+     background */
+.cg-hero-visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cg-hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.26;
+    mix-blend-mode: luminosity;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0) 92%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0) 92%);
+}
+
 .cg-hero h1 {
     color: #fff;
     font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
