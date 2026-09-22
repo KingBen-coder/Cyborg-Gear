@@ -178,6 +178,24 @@ h1, h2, h3, h4, h5, h6,
     width: auto;
 }
 
+/* Specificity note: the legacy style.css still has an old rule,
+   `.navbar .navbar-nav .nav-link { color: #FFFFFF; }`, left over from
+   the previous dark navbar design. It matches 3 classes, so it beats
+   a plain `.cg-navbar .nav-link` rule (2 classes) even though this
+   file loads after style.css — specificity wins over source order.
+   Matching (or exceeding) that specificity here is what actually
+   makes the links visible on the new white navbar. */
+.cg-navbar .navbar-nav .nav-link {
+    color: var(--cg-navy) !important;
+    margin-right: 0;
+    padding: 0.5rem 1rem !important;
+}
+
+.cg-navbar .navbar-nav .nav-link:hover,
+.cg-navbar .navbar-nav .nav-link.active {
+    color: var(--cg-blue) !important;
+}
+
 .cg-navbar .nav-link {
     color: var(--cg-navy);
     font-weight: 600;
