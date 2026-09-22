@@ -658,16 +658,26 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* The back-to-top button and the new call/WhatsApp floating actions
-   both sit fixed at the bottom-right; stack the back-to-top button
-   above them so neither is obscured or hard to tap. */
+   both sit fixed at the bottom-right, so they're treated as one
+   aligned stack: same width/right offset as the floating buttons,
+   and the same 0.75rem gap used between the floating buttons
+   themselves (previously this sat flush against them with a 0px
+   gap while the whatsapp-to-call gap was 0.75rem, hence the
+   uneven spacing). */
 .back-to-top {
     right: 1.25rem !important;
-    bottom: 8.5rem !important;
+    bottom: 9.25rem !important;
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.3rem;
 }
 
 @media (max-width: 575.98px) {
     .back-to-top {
-        bottom: 7.75rem !important;
+        bottom: 8.5rem !important;
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 1.15rem;
     }
 }
 
