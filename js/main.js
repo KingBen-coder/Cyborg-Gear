@@ -184,22 +184,52 @@ function cgSendForm(form, messageEl, subject, successText) {
     button.textContent = 'Sending...';
     show('', true);
 
+    // Plain-text fallback: opens the visitor's mail app with everything pre-filled.
+    function mailtoFallback() {
+        var body = Object.keys(payload)
+            .filter(function (k) { return k.charAt(0) !== '_'; })
+            .map(function (k) { return k + ': ' + payload[k]; }).join('\n');
+        return 'mailto:gearcyborg@gmail.com?subject=' + encodeURIComponent(payload._subject) +
+               '&body=' + encodeURIComponent(body);
+    }
+
+    function showFailure(detail) {
+        var text = /activat/i.test(detail || '')
+            ? 'This form is awaiting one-time activation. The site owner needs to click "Activate Form" in the email sent to gearcyborg@gmail.com, then try again. '
+            : "Sorry, we couldn't send your message automatically. ";
+        messageEl.classList.remove('text-success');
+        messageEl.classList.add('text-danger');
+        messageEl.innerHTML = '';
+        messageEl.appendChild(document.createTextNode(text));
+        var link = document.createElement('a');
+        link.href = mailtoFallback();
+        link.textContent = 'Click here to email us instead';
+        messageEl.appendChild(link);
+        messageEl.appendChild(document.createTextNode(', or call/WhatsApp +254 717 474 848.'));
+    }
+
     fetch(CG_FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
     })
-        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
-        .then(function (r) {
-            if (r.ok && String(r.data.success) === 'true') {
-                show(successText, true);
-                form.reset();
-            } else {
-                throw new Error('send failed');
-            }
+        .then(function (res) {
+            return res.text().then(function (text) {
+                var data = {};
+                try { data = JSON.parse(text); } catch (e) { /* non-JSON reply */ }
+                var ok = res.ok && (data.success === true || data.success === 'true');
+                if (ok) {
+                    show('Message Delivered Successfully', true);
+                    form.reset();
+                } else {
+                    console.error('Form send failed:', res.status, text);
+                    showFailure(data.message || text);
+                }
+            });
         })
-        .catch(function () {
-            show("Sorry, we couldn't send your message right now. Please email gearcyborg@gmail.com, call +254 717 474 848, or WhatsApp us directly.", false);
+        .catch(function (err) {
+            console.error('Form send error:', err);
+            showFailure('');
         })
         .then(function () {
             button.disabled = false;
@@ -214,7 +244,7 @@ function handleQuoteSubmit(form) {
         form,
         form.querySelector('.quote-message'),
         'New quote request',
-        "Thanks \u2014 we've received your request and will get back to you within one business day. For a faster reply, feel free to call or WhatsApp us directly."
+        "Message Delivered Successfully"
     );
 }
 
@@ -223,6 +253,6 @@ function handleContactSubmit(form) {
         form,
         form.querySelector('.contact-message'),
         'New contact message',
-        "Thanks for reaching out \u2014 we'll get back to you shortly."
+        "Message Delivered Successfully"
     );
 }
