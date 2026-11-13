@@ -150,46 +150,79 @@ function handleNewsletterSignup(form) {
     return false; // prevent page reload; hook up a real endpoint here when available
 }
 
-// Quote request form: client-side validation + confirmation (no backend attached yet).
-// To actually receive these requests, wire this up to a form service (e.g. Formspree)
-// or a backend endpoint, and replace the confirmation-only logic below.
+// Quote + contact forms: validated client-side, then delivered by email to
+// gearcyborg@gmail.com via FormSubmit (https://formsubmit.co), a no-backend form service.
+// NOTE: the very first submission triggers a one-time activation email from FormSubmit
+// to the inbox below; click "Activate Form" in it and all later submissions arrive normally.
+var CG_FORM_ENDPOINT = 'https://formsubmit.co/ajax/gearcyborg@gmail.com';
+
+function cgSendForm(form, messageEl, subject, successText) {
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var emailInput = form.querySelector('input[name="email"]');
+    var button = form.querySelector('button[type="submit"]');
+
+    function show(text, ok) {
+        messageEl.textContent = text;
+        messageEl.classList.toggle('text-success', ok);
+        messageEl.classList.toggle('text-danger', !ok);
+    }
+
+    if (!emailPattern.test(emailInput.value.trim())) {
+        show('Please enter a valid email address.', false);
+        return false;
+    }
+
+    var payload = {};
+    new FormData(form).forEach(function (value, key) { payload[key] = value; });
+    payload._subject = subject + ' - ' + (payload.name || 'Website visitor');
+    payload._replyto = payload.email;
+    payload._template = 'table';
+    payload._captcha = 'false';
+
+    var originalLabel = button.innerHTML;
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    show('', true);
+
+    fetch(CG_FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (r) {
+            if (r.ok && String(r.data.success) === 'true') {
+                show(successText, true);
+                form.reset();
+            } else {
+                throw new Error('send failed');
+            }
+        })
+        .catch(function () {
+            show("Sorry, we couldn't send your message right now. Please email gearcyborg@gmail.com, call +254 717 474 848, or WhatsApp us directly.", false);
+        })
+        .then(function () {
+            button.disabled = false;
+            button.innerHTML = originalLabel;
+        });
+
+    return false;
+}
+
 function handleQuoteSubmit(form) {
-    var messageEl = form.querySelector('.quote-message');
-    var emailInput = form.querySelector('input[name="email"]');
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(emailInput.value.trim())) {
-        messageEl.textContent = 'Please enter a valid email address.';
-        messageEl.classList.remove('text-success');
-        messageEl.classList.add('text-danger');
-        return false;
-    }
-
-    messageEl.textContent = "Thanks — we've received your request and will get back to you within one business day. For a faster reply, feel free to call or WhatsApp us directly.";
-    messageEl.classList.remove('text-danger');
-    messageEl.classList.add('text-success');
-    form.reset();
-    return false;
+    return cgSendForm(
+        form,
+        form.querySelector('.quote-message'),
+        'New quote request',
+        "Thanks \u2014 we've received your request and will get back to you within one business day. For a faster reply, feel free to call or WhatsApp us directly."
+    );
 }
 
-// Contact form: same pattern as the quote form above.
 function handleContactSubmit(form) {
-    var messageEl = form.querySelector('.contact-message');
-    var emailInput = form.querySelector('input[name="email"]');
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(emailInput.value.trim())) {
-        messageEl.textContent = 'Please enter a valid email address.';
-        messageEl.classList.remove('text-success');
-        messageEl.classList.add('text-danger');
-        return false;
-    }
-
-    messageEl.textContent = "Thanks for reaching out — we'll get back to you shortly.";
-    messageEl.classList.remove('text-danger');
-    messageEl.classList.add('text-success');
-    form.reset();
-    return false;
+    return cgSendForm(
+        form,
+        form.querySelector('.contact-message'),
+        'New contact message',
+        "Thanks for reaching out \u2014 we'll get back to you shortly."
+    );
 }
-
-
